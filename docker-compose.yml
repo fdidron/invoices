@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db: 
+    image: postgres:16.1
+    volumes:
+      - pg-invoices:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  maildev:
+    image: djfarrelly/maildev
+    ports:
+      - "1080:80"
+      - "1025:25"
+
+volumes:
+  pg-invoices:

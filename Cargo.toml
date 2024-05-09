@@ -1,0 +1,23 @@
+[package]
+name = "invoices"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15.0"
+sqlx = { version = "0.7.3", features = ["runtime-async-std-native-tls", "postgres", "uuid"] }
+axum = { version = "0.7.4", features = ["macros", "form"] }
+axum_session = { version = "0.14.0" }
+axum_session_sqlx = { version = "0.1.0" }
+validator = { version = "0.16", features = ["derive"] }
+harsh = "0.2.2"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+tokio = { version = "1.36.0", features = ["full"] }
+tower-http = { version = "0.5.2", features = ["cors", "fs"] }
+maud = { version = "*", features = ["axum"] }
+totp-rs = "^5.0"
+rand = "0.8.5"
+anyhow = "1.0.83"
